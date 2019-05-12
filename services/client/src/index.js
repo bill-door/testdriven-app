@@ -5,6 +5,7 @@ import axios from 'axios';
 import UsersList from './components/UsersList';
 import AddUser from './components/AddUser';
 
+
 class App extends Component {
   constructor() {
     super();
@@ -32,8 +33,8 @@ class App extends Component {
     };
     axios.post(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`, data)
     .then((res) => {
-      this.getUsers();  // new
-      this.setState({ username: '', email: '' });  // new
+      this.getUsers();
+      this.setState({ username: '', email: '' });
     })
     .catch((err) => { console.log(err); });
   };
